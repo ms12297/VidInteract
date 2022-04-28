@@ -1,0 +1,73 @@
+body{
+	margin: 0;
+}
+
+.wrapper{
+	background-color: bisque;
+	display: grid;
+	position: absolute;
+	width:  100%;
+	height: 100%;
+	align-content: center;
+	justify-content: center;
+}
+
+.container{
+	/* 4:3 ratio; */
+	width: 640px;
+	height:  480px;
+	position: relative;
+	background-color: aquamarine;
+	transform-style: preserve-3d;
+}
+
+.front{
+	background-color: aquamarine;
+	display: grid;
+	align-content: center;
+	justify-content: center;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transform: translateZ(1px);
+}
+
+.back{
+	background-color: aqua;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transform: rotateY(180deg) translateX(1px);
+}
+
+.back video{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.anim{
+	animation-name: flip;
+	animation-duration: 5s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes flip{
+	from{ transform: rotateY(0deg); }
+	to{ transform: rotateY(180deg); }
+}
+
+.choices {
+	width: calc(100% - 20px);
+	display: flex;
+	justify-content: space-between;
+	padding: 5px 10px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	visibility: hidden;
+}
